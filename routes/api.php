@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/portfolios', [PortfolioController::class, 'index']);
+Route::get('/portfolios/{slug}', [PortfolioController::class, 'show']);
