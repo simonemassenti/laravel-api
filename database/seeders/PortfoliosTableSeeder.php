@@ -17,7 +17,7 @@ class PortfoliosTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 25; $i++) {
             $portfolio = new Portfolio;
             $portfolio->title = $faker->sentence(5);
             $portfolio->description = $faker->text(500);

@@ -10,7 +10,7 @@ class PortfolioController extends Controller
 {
     public function index()
     {
-        $portfolios = Portfolio::all();
+        $portfolios = Portfolio::paginate(12);
 
         return response()->json([
             'results' => $portfolios
@@ -21,7 +21,7 @@ class PortfolioController extends Controller
     {
         $portfolio = Portfolio::with('type')->where('slug', $slug)->first();
 
-        if ($slug) {
+        if ($portfolio) {
             return response()->json([
                 'result' => $portfolio,
                 'success' => true
